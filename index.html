@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Полка: подбор, обучение и управление полевыми командами для розницы и производителей FMCG.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23101214'/%3E%3Cpath d='M34 19H48V32H43V25H39V32H34Z' fill='%23D2452B'/%3E%3Crect x='8' y='12' width='48' height='8' fill='%23F7F7F5'/%3E%3Crect x='8' y='31' width='48' height='8' fill='%23F7F7F5'/%3E%3Crect x='8' y='50' width='48' height='8' fill='%23F7F7F5'/%3E%3C/svg%3E">
+<title>Полка, лендинг</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Unbounded:wght@700&family=Montserrat:wght@500&display=swap">
+<style>
+/* Layout: a plain ledger. Paper page, ink text, one accent used on the letter П and on nothing else. Left column holds a short section name, right column holds running text. The hero is the three words of the slogan, each standing on its own shelf line. */
+:root{
+  color-scheme:light;
+  --paper:#F7F7F5;--ink:#101214;--soft:#4F565B;--line:#D5D6D1;--accent:#D2452B;
+  --f:'Onest',Arial,sans-serif;--fd:'Unbounded','Onest',Arial,sans-serif;
+  --gut:clamp(18px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f);font-size:19px;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.w{max-width:1160px;margin-inline:auto;padding-inline:var(--gut)}
+p{margin:0}
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:22px}
+.top .logo{display:block;height:52px;width:auto}
+.top .hr{display:flex;align-items:center;gap:28px}
+.top nav{display:flex;gap:24px;font-size:16px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:14px;min-height:46px;padding:0 20px 0 22px;background:var(--ink);color:var(--paper);font-weight:500;font-size:16px;letter-spacing:.005em;text-decoration:none;white-space:nowrap;border-radius:0}
+.cta:after{content:"";width:12px;height:12px;background:var(--accent);transition:transform .2s ease}
+.cta:hover{background:#2A2E31}
+.cta:hover:after{transform:translateX(3px)}
+@media (prefers-reduced-motion:reduce){.cta:after{transition:none}}
+.top nav a{text-decoration:none;color:var(--soft)}
+.top nav a:hover{color:var(--ink);text-decoration:underline}
+.L .gf,.L .gw{fill:var(--ink)}.L .ga{fill:var(--accent)}.L .gc{fill:#8F9090}
+.L .gw{font-family:'Unbounded','Onest',Arial,sans-serif;font-weight:700}
+.L .gc{font-family:'Montserrat','Onest',Arial,sans-serif;font-weight:500}
+/* hero */
+.hero{padding-block:clamp(36px,7vw,88px) clamp(40px,6vw,72px)}
+.words{margin:0;padding:0;list-style:none}
+.words li{--t:clamp(6px,.9vw,12px);position:relative;font-weight:300;font-size:clamp(40px,9.4vw,128px);line-height:1.02;letter-spacing:-0.045em;padding-bottom:.1em}
+.words li:after{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--t);background:var(--ink)}
+.words li:nth-child(2) .p{position:absolute;right:clamp(16px,3vw,44px);top:0;bottom:var(--t);aspect-ratio:14/13;display:block}
+.words .p svg{display:block;width:100%;height:100%}
+.words .p path{fill:var(--accent)}
+.hero .lede{display:block;margin-top:clamp(32px,5vw,56px)}
+.hero .lede p{max-width:min(100%,820px);margin-inline:auto;text-align:center;font-size:clamp(16px,1.55vw,20px);line-height:1.55;text-wrap:balance}
+.hero .lede small{font-size:16px;color:var(--soft);line-height:1.5}
+/* ledger rows */
+.row{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:20px 56px;padding-block:clamp(36px,5vw,56px);border-top:1px solid var(--ink)}
+.row > h2{margin:0;font-size:19px;font-weight:600;line-height:1.3}
+.row .t{max-width:64ch;display:flex;flex-direction:column;gap:18px}
+.row .t b{font-weight:600}
+.row ul,.row ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:64ch}
+.row ol{counter-reset:s}
+.row ol li{counter-increment:s;padding-left:44px;position:relative}
+.row ol li:before{content:counter(s);position:absolute;left:0;top:0;font-weight:600;width:28px}
+.row ul li{padding-left:22px;position:relative}
+.row ul li:before{content:"";position:absolute;left:0;top:.8em;width:10px;height:2px;background:var(--ink)}
+.row dl{margin:0;display:flex;flex-direction:column;max-width:64ch}
+.row dt{font-weight:600;margin-top:20px}
+.row dt:first-child{margin-top:0}
+.row dd{margin:2px 0 0;color:var(--soft)}
+.fm{display:flex;flex-direction:column;max-width:64ch}
+.fm div{display:flex;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-block:12px}
+.fm div:first-child{border-top:1px solid var(--line)}
+.fm b{font-family:var(--fd);font-weight:700;font-size:22px;width:56px;flex:none}
+.soft{color:var(--soft)}
+/* form */
+form{display:flex;flex-direction:column;gap:22px;max-width:520px}
+label{display:flex;flex-direction:column;gap:4px;font-size:15px;color:var(--soft)}
+input[type=text],input[type=number],textarea{font:inherit;font-size:19px;color:var(--ink);background:none;border:0;border-bottom:1.5px solid var(--ink);border-radius:0;padding:6px 0;width:100%}
+textarea{min-height:64px;resize:vertical}
+.fmts{display:flex;gap:22px;flex-wrap:wrap;font-size:19px;color:var(--ink)}
+.fmts label{flex-direction:row;align-items:center;gap:8px;color:var(--ink)}
+.fmts input{width:18px;height:18px;accent-color:var(--ink)}
+.btn{align-self:flex-start;font:inherit;font-weight:500;background:var(--ink);color:var(--paper);border:0;padding:13px 22px;cursor:pointer}
+.btn:hover{background:#2A2E31}
+.btn.ln{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.out{display:none;flex-direction:column;gap:12px;margin-top:6px}
+.out.on{display:flex}
+.out pre{margin:0;white-space:pre-wrap;font-family:var(--f);font-size:17px;line-height:1.55;border-left:3px solid var(--accent);padding:4px 0 4px 14px}
+.who{display:flex;flex-direction:column;gap:2px;margin-bottom:28px}
+.who .cp{font:inherit;font-size:14px;color:var(--soft);background:none;border:0;border-bottom:1px solid var(--soft);padding:0;margin-left:10px;cursor:pointer}
+footer{border-top:1px solid var(--ink);padding-block:28px 48px;font-size:15px;color:var(--soft)}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (prefers-reduced-motion:no-preference){
+  .words li:after{transform-origin:left;animation:g .8s cubic-bezier(.2,.7,.2,1) both}
+  .words li:nth-child(2):after{animation-delay:.12s}
+  .words li:nth-child(3):after{animation-delay:.24s}
+  @keyframes g{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+@media (max-width:640px){.top nav{display:none}}
+@media (max-width:760px){
+  .row{grid-template-columns:1fr}
+  .row > h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+}
+</style>
+</head>
+<body>
+<div class="w">
+<div class="top">
+<a href="#top" aria-label="Полка"><svg class="logo L" viewBox="0 -75 593 135" aria-hidden="true"><g transform="translate(-13.04,-94.57) scale(1.6304)"><path class="ga" d="M34 19H48V32H43V25H39V32H34Z"/><rect class="gf" x="8" y="12" width="48" height="8"/><rect class="gf" x="8" y="31" width="48" height="8"/><rect class="gf" x="8" y="50" width="48" height="8"/></g><text class="gw" x="113.3" y="0" font-size="100" textLength="480" lengthAdjust="spacing">ПОЛКА</text><text class="gc" x="0" y="52" font-size="32" textLength="593" lengthAdjust="spacing">ПОЛЕВЫЕ КОМАНДЫ ДЛЯ РОЗНИЦЫ</text></svg></a>
+<div class="hr"><nav aria-label="Разделы"><a href="#services">Услуги</a><a href="#experience">Опыт</a></nav><a class="cta" href="#contact">Обсудить проект</a></div>
+</div>
+</div>
+
+<main id="top">
+<section class="hero">
+<div class="w">
+<ul class="words" aria-label="Люди. Проекты. Результат.">
+<li>Люди.</li>
+<li>Проекты.<span class="p" aria-hidden="true"><svg viewBox="0 0 14 13" preserveAspectRatio="none"><path d="M0 0H14V13H9V5H5V13H0Z"/></svg></span></li>
+<li>Результат.</li>
+</ul>
+<div class="lede">
+<p>Комплексные решения для FMCG-бизнеса. Помогаем выстраивать эффективную работу: от подбора и обучения персонала до распределения территорий, разработки маршрутов и контроля выполнения поставленных задач.</p>
+</div>
+</div>
+</section>
+
+<div class="w">
+<section class="row" id="services">
+<h2>Услуги</h2>
+<div class="t">
+<p><b>Подбор и обучение персонала.</b> Подбор мерчандайзеров, торговых представителей, супервайзеров и региональных менеджеров. Массовый подбор и оперативный вывод сотрудников на проект. Организация оформления, обучения и адаптации. Подготовка к работе по стандартам заказчика.</p>
+<p><b>Запуск и сопровождение проектов.</b> Запуск полевых проектов с нуля. Формирование и управление полевыми командами. Организация работы сотрудников на закреплённых территориях. Контроль качества исполнения, стандартов и KPI. Проведение аудитов и обучение супервайзеров.</p>
+<p><b>Территориальное планирование и маршрутизация.</b> Деление территорий между сотрудниками, формирование зон ответственности, разработка маршрутов посещения торговых точек, составление графиков работы и посещений, распределение нагрузки и оптимизация маршрутов с учётом географии и задач проекта.</p>
+<p><b>Дополнительно.</b> Организация размещения и доставки POSM-материалов. Подбор и обучение складского персонала. Реализация временных и краткосрочных проектов. Комплексная поддержка действующих полевых команд.</p>
+</div>
+</section>
+
+<section class="row" id="formats">
+<h2>Форматы торговых сетей</h2>
+<div class="t">
+<div class="fm"><div><b>ММ</b><span>Минимаркеты</span></div><div><b>СМ</b><span>Супермаркеты</span></div><div><b>ГМ</b><span>Гипермаркеты</span></div></div>
+<p class="soft">Учитываем особенности торговых точек, требования производителя, приоритетность объектов и необходимую частоту посещений.</p>
+</div>
+</section>
+
+<section class="row" id="how">
+<h2>Как строится проект</h2>
+<ol>
+<li>Запуск полевого проекта с нуля.</li>
+<li>Формирование полевой команды и управление ею.</li>
+<li>Закрепление сотрудников за территориями и маршрутами.</li>
+<li>Контроль качества исполнения, стандартов и KPI.</li>
+<li>Аудиты и обучение супервайзеров.</li>
+</ol>
+</section>
+
+<section class="row" id="experience">
+<h2>Опыт</h2>
+<div class="t">
+<p>Участвовали в проектах для крупных производителей FMCG-продукции: Danone, Pepsi, Coca-Cola, Nestlé, Ehrmann, Gillette, Вимм-Билль-Данн, Черкизово, Evyap.</p>
+<p>В рамках проектов выполнялись задачи по запуску с нуля, подбору и обучению персонала, формированию полевых команд, организации работы в регионах, проведению аудитов и сопровождению действующих проектов.</p>
+<p>Организовывали проекты в Москве и Московской области, Санкт-Петербурге, Казани, Екатеринбурге, Перми, Владивостоке, Хабаровске, Иркутске и других крупных городах России. Готовы работать как на отдельных территориях, так и в нескольких регионах одновременно.</p>
+</div>
+</section>
+
+<section class="row" id="why">
+<h2>Почему мы</h2>
+<dl>
+<dt>Комплексный подход</dt><dd>От подбора персонала до организации и контроля полевой работы.</dd>
+<dt>Опыт запуска проектов с нуля</dt><dd>Формирование команд и выстраивание рабочих процессов в сжатые сроки.</dd>
+<dt>Системная организация</dt><dd>Территории, маршруты, графики посещений и зоны ответственности.</dd>
+<dt>Понимание специфики розницы</dt><dd>Организация работы с различными форматами торговых сетей с учётом требований заказчика.</dd>
+<dt>Контроль качества</dt><dd>Внимание к стандартам исполнения, эффективности сотрудников и достижению KPI.</dd>
+<dt>Гибкость и масштабируемость</dt><dd>Решения с учётом географии, количества торговых точек и потребностей конкретного проекта.</dd>
+</dl>
+</section>
+
+<section class="row" id="contact">
+<h2>Связаться</h2>
+<div>
+<p style="max-width:56ch;font-size:clamp(21px,2.2vw,26px);line-height:1.35;font-weight:300">Предложим оптимальный формат сотрудничества с учётом ваших задач, географии, количества торговых точек, форматов сетей и потребности в персонале.</p>
+<form id="brief" novalidate>
+<label>География<input type="text" id="f-geo" autocomplete="off"></label>
+<label>Количество торговых точек<input type="number" id="f-n" min="0" inputmode="numeric"></label>
+<div class="fmts" role="group" aria-label="Форматы сетей"><label><input type="checkbox" name="fm" value="ММ">ММ</label><label><input type="checkbox" name="fm" value="СМ">СМ</label><label><input type="checkbox" name="fm" value="ГМ">ГМ</label></div>
+<label>Потребность в персонале<textarea id="f-staff"></textarea></label>
+<label>Как с вами связаться<input type="text" id="f-c" autocomplete="off"></label>
+<button class="btn" type="submit">Оставить заявку</button>
+<p class="soft" style="font-size:15px;max-width:44ch">По кнопке откроется форма заявки с вашими ответами.</p>
+<div class="out" id="out" aria-live="polite"><p id="outmsg"></p><pre id="outtxt"></pre><a class="btn ln" id="openform" target="_blank" rel="noopener" hidden>Открыть форму</a><button class="btn ln" type="button" id="cpall" hidden>Скопировать текст</button></div>
+</form>
+</div>
+</section>
+</div>
+</main>
+
+<footer><div class="w"><span>Полка. Команда по подбору, обучению и управлению персоналом</span><span>Полевые команды для розницы</span></div></footer>
+
+<script>
+/* Подключение Google Формы.
+   formUrl: ссылка на форму вида https://docs.google.com/forms/d/e/ID/viewform
+   fields: номера полей из «Получить ссылку для предварительного заполнения» (entry.123456789 -> "123456789").
+   Если fields пустые, форма откроется без предзаполнения, а текст заявки скопируется. */
+var CONFIG = {
+  formUrl: "",
+  fields: { geo: "", count: "", formats: "", staff: "", contact: "" }
+};
+function $(id){return document.getElementById(id);}
+function copyText(txt,btn){
+  var old=btn.textContent;
+  function done(ok){btn.textContent=ok?'Скопировано':'Выделите и скопируйте';setTimeout(function(){btn.textContent=old;},1600);}
+  try{navigator.clipboard.writeText(txt).then(function(){done(true);},function(){done(false);});}catch(e){done(false);}
+}
+function buildPrefill(vals){
+  var f=CONFIG.fields,q=[];
+  function add(key,v){if(f[key]&&v)q.push('entry.'+encodeURIComponent(f[key])+'='+encodeURIComponent(v));}
+  add('geo',vals.geo);add('count',vals.count);add('staff',vals.staff);add('contact',vals.contact);
+  if(f.formats&&vals.formats.length){vals.formats.forEach(function(x){q.push('entry.'+encodeURIComponent(f.formats)+'='+encodeURIComponent(x));});}
+  if(!q.length)return null;
+  return CONFIG.formUrl+(CONFIG.formUrl.indexOf('?')>-1?'&':'?')+'usp=pp_url&'+q.join('&');
+}
+$('brief').addEventListener('submit',function(e){
+  e.preventDefault();
+  function v(id){return ($(id).value||'').trim();}
+  var fm=[].slice.call(document.querySelectorAll('input[name=fm]:checked')).map(function(i){return i.value;});
+  var vals={geo:v('f-geo'),count:v('f-n'),formats:fm,staff:v('f-staff'),contact:v('f-c')};
+  var t='Заявка на обсуждение проекта\nГеография: '+(vals.geo||'не указана')+'\nКоличество торговых точек: '+(vals.count||'не указано')+'\nФорматы сетей: '+(fm.join(', ')||'не указаны')+'\nПотребность в персонале: '+(vals.staff||'не указана')+'\nКонтакт: '+(vals.contact||'не указан');
+  var out=$('out'),msg=$('outmsg'),open=$('openform'),cp=$('cpall');
+  out.className='out on';
+  $('outtxt').textContent=t;
+  open.hidden=true;cp.hidden=true;
+  if(!CONFIG.formUrl){
+    msg.textContent='Приём заявок скоро заработает. Ваши ответы ниже.';
+    cp.hidden=false;cp.onclick=function(){copyText(t,cp);};
+    return;
+  }
+  var url=buildPrefill(vals);
+  if(url){
+    msg.textContent='Открываем форму с вашими ответами. Если вкладка не открылась, нажмите кнопку.';
+    open.href=url;open.hidden=false;
+    try{window.open(url,'_blank','noopener');}catch(err){}
+  }else{
+    msg.textContent='Откройте форму и вставьте скопированный текст в поле ответа.';
+    open.href=CONFIG.formUrl;open.hidden=false;
+    cp.hidden=false;cp.onclick=function(){copyText(t,cp);};
+    try{navigator.clipboard.writeText(t);}catch(err){}
+  }
+});
+</script>
+</body>
+</html>
